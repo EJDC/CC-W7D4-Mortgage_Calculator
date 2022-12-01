@@ -34,7 +34,7 @@ const CalculatorContainer = () => {
   useEffect(() => {
     console.log("use effect triggered on monthly payments");
     const totalMonths = lengthOfMortgage !== 0 ? lengthOfMortgage * 12 : 0;
-    const monthlyPayment = totalMonths === 0 ? 0 : totalValue / totalMonths;
+    const monthlyPayment = totalMonths === 0 ? 0 : (totalValue / totalMonths).toFixed(2);
     setMonthlyPayments(monthlyPayment);
   }, [totalValue, lengthOfMortgage]);
 

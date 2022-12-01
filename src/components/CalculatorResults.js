@@ -16,7 +16,7 @@ const CalculatorResults = ({ value, budget, totalValue, monthlyPayments }) => {
         </tr>
         <tr>
             <td> Monthly  Payments</td>
-            {monthlyPayments === 0 ? <td>Enter Mortgage Length!</td> : <td> £{monthlyPayments}</td>}
+            {monthlyPayments == 0 ? <td>Enter Mortgage Length!</td> : <td> £{monthlyPayments}</td>}
         </tr>
       </table>
     </>
