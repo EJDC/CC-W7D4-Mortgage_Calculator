@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CalculatorInput from "../components/CalculatorInput";
 import CalculatorResults from "../components/CalculatorResults";
+import "./CalculatorContainer.css";
 
 const CalculatorContainer = () => {
   const [budget, setBudget] = useState(0);
@@ -77,26 +78,32 @@ const CalculatorContainer = () => {
 
   return (
     <>
-      <h3>A few details first...</h3>
-      <CalculatorInput
-        onMainIncomeUpdated={onMainIncomeUpdated}
-        onSecondIncomeUpdated={onSecondIncomeUpdated}
-        onDepositUpdated={onDepositUpdated}
-        onMonthlyCommitmentsUpdated={onMonthlyCommitmentsUpdated}
-        onInterestRateUpdated={onInterestRateUpdated}
-        onLengthOfMortgageUpdated={onLengthOfMortgageUpdated}
-      />
-    <h3>Let's see the results!</h3>
-      {budget !== 0 ? (
-        <CalculatorResults
-          value={value}
-          budget={budget}
-          totalValue={totalValue}
-          monthlyPayments={monthlyPayments}
-        />
-      ) : (
-        <div>Please enter a primary income above to begin!</div>
-      )}
+      <section>
+        <div className="input">
+          <h3 className="input-details">A few details first...</h3>
+          <CalculatorInput
+            onMainIncomeUpdated={onMainIncomeUpdated}
+            onSecondIncomeUpdated={onSecondIncomeUpdated}
+            onDepositUpdated={onDepositUpdated}
+            onMonthlyCommitmentsUpdated={onMonthlyCommitmentsUpdated}
+            onInterestRateUpdated={onInterestRateUpdated}
+            onLengthOfMortgageUpdated={onLengthOfMortgageUpdated}
+          />
+        </div>
+        <div className="output">
+          <h3 className="output-details">Let's see the results!</h3>
+          {budget !== 0 ? (
+            <CalculatorResults
+              value={value}
+              budget={budget}
+              totalValue={totalValue}
+              monthlyPayments={monthlyPayments}
+            />
+          ) : (
+            <div className="enter">Please enter a primary income above to begin!</div>
+          )}
+        </div>
+      </section>
     </>
   );
 };

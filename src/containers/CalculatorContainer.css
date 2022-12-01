@@ -1,0 +1,33 @@
+section {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+div {
+    margin: 1rem;
+}
+
+.output-details {
+    text-align: center;
+}
+
+.input-details {
+    text-align: center;
+}
+
+.output {
+    text-align: right;
+}
+
+table, th, td {
+    border:1px solid;
+}
+
+td {
+    padding: 0.5rem;
+}
+
+.enter {
+    text-align: center;
+}

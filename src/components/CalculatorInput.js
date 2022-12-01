@@ -1,3 +1,5 @@
+import './CalculatorInput.css'
+
 const CalculatorInput = ({onMainIncomeUpdated, onSecondIncomeUpdated,onDepositUpdated,onMonthlyCommitmentsUpdated,onInterestRateUpdated,onLengthOfMortgageUpdated}) => {
 
   const handleMainApplicantSalaryChange = function (event) {
@@ -35,7 +37,7 @@ const CalculatorInput = ({onMainIncomeUpdated, onSecondIncomeUpdated,onDepositUp
     <form>
       <ul>
         <li>
-          <label htmlFor="main-applicant-salary">Your Annual Salary</label>
+          <label htmlFor="main-applicant-salary">Your Annual Salary (£)</label>
           <input
             id="main-applicant-salary"
             type="number"
@@ -45,7 +47,7 @@ const CalculatorInput = ({onMainIncomeUpdated, onSecondIncomeUpdated,onDepositUp
         </li>
         <li>
           <label htmlFor="second-applicant-salary">
-            Your Partner's Salary (Optional)
+            Your Partner's Salary (£)
           </label>
           <input
             id="second-applicant-salary"
@@ -54,7 +56,7 @@ const CalculatorInput = ({onMainIncomeUpdated, onSecondIncomeUpdated,onDepositUp
           />
         </li>
         <li>
-          <label htmlFor="deposit">Deposit (Optional)</label>
+          <label htmlFor="deposit">Deposit (£)</label>
           <input
             id="deposit"
             type="number"
@@ -63,7 +65,7 @@ const CalculatorInput = ({onMainIncomeUpdated, onSecondIncomeUpdated,onDepositUp
         </li>
         <li>
           <label htmlFor="monthly-commitments">
-            Monthly Commitments
+            Monthly Commitments (£)
           </label>
           <input
             id="monthly-commitments"
@@ -72,7 +74,7 @@ const CalculatorInput = ({onMainIncomeUpdated, onSecondIncomeUpdated,onDepositUp
           />
         </li>
         <li>
-          <label htmlFor="interest">Interest Rate</label>
+          <label htmlFor="interest">Interest Rate (%)</label>
           <input
             id="interest"
             type="number"

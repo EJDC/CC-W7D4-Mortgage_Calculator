@@ -1,0 +1,18 @@
+/* form {
+    display: flex;
+    justify-content: flex-start;
+} */
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+input {
+    margin: 0.5rem;
+    width: 4rem;
+    padding: 0.5rem
+}
+
