@@ -16,25 +16,22 @@ const CalculatorContainer = () => {
   const [lengthOfMortgage, setLengthOfMortgage] = useState(0);
 
   useEffect(() => {
-    console.log("use effect triggered on budget");
     setBudget(mainIncome + secondIncome - monthlyCommitments + deposit);
   }, [mainIncome, secondIncome, monthlyCommitments, deposit]);
 
   useEffect(() => {
-    console.log("use effect triggered on value");
     setValue(budget * 3);
   }, [budget]);
 
   useEffect(() => {
-    console.log("use effect triggered on total value with interest");
     const totalValue = value + value * (interestRate / 100);
     setTotalValue(totalValue);
   }, [value, interestRate]);
 
   useEffect(() => {
-    console.log("use effect triggered on monthly payments");
     const totalMonths = lengthOfMortgage !== 0 ? lengthOfMortgage * 12 : 0;
-    const monthlyPayment = totalMonths === 0 ? 0 : (totalValue / totalMonths).toFixed(2);
+    const monthlyPayment =
+      totalMonths === 0 ? 0 : (totalValue / totalMonths).toFixed(2);
     setMonthlyPayments(monthlyPayment);
   }, [totalValue, lengthOfMortgage]);
 
@@ -100,7 +97,9 @@ const CalculatorContainer = () => {
               monthlyPayments={monthlyPayments}
             />
           ) : (
-            <div className="enter">Please enter a primary income above to begin!</div>
+            <div className="enter">
+              Please enter a primary income above to begin!
+            </div>
           )}
         </div>
       </section>
