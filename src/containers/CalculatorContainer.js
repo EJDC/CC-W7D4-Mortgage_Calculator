@@ -16,22 +16,22 @@ const CalculatorContainer = () => {
   const [lengthOfMortgage, setLengthOfMortgage] = useState(0);
 
   useEffect(() => {
-    setBudget(mainIncome + secondIncome - monthlyCommitments + deposit);
-  }, [mainIncome, secondIncome, monthlyCommitments, deposit]);
+    setBudget(mainIncome + secondIncome - (monthlyCommitments*6));
+  }, [mainIncome, secondIncome, monthlyCommitments]);
 
   useEffect(() => {
-    setValue(budget * 3);
-  }, [budget]);
+    setValue(deposit +(budget * 3));
+  }, [budget, deposit]);
 
   useEffect(() => {
-    const totalValue = value + value * (interestRate / 100);
+    const totalValue = (value-deposit) * (interestRate / 100);
     setTotalValue(totalValue);
   }, [value, interestRate]);
 
   useEffect(() => {
     const totalMonths = lengthOfMortgage !== 0 ? lengthOfMortgage * 12 : 0;
     const monthlyPayment =
-      totalMonths === 0 ? 0 : (totalValue / totalMonths).toFixed(2);
+      totalMonths === 0 ? 0 : ((value - deposit + totalValue) / totalMonths).toFixed(2);
     setMonthlyPayments(monthlyPayment);
   }, [totalValue, lengthOfMortgage]);
 
@@ -95,6 +95,7 @@ const CalculatorContainer = () => {
               budget={budget}
               totalValue={totalValue}
               monthlyPayments={monthlyPayments}
+              deposit={deposit}
             />
           ) : (
             <div className="enter">

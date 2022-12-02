@@ -1,18 +1,30 @@
-const CalculatorResults = ({ value, budget, totalValue, monthlyPayments }) => {
+const CalculatorResults = ({ value, budget, totalValue, monthlyPayments, deposit}) => {
   return (
     <>
       <table>
+
         <tr>
-          <td> Monthly Budget </td>
-          <td> £{budget}</td>
+          <td> Deposit </td>
+          <td> £{deposit}</td>
         </tr>
+
         <tr>
-          <td> Max Possible Mortgage </td>
+          <td> Amount Able to Borrow</td>
+          <td> £{budget *3}</td>
+        </tr>
+
+        <tr>
+            {/* budget *3 and deposit */}
+          <td> Max Possible House Price </td>
           <td> £{value}</td>
         </tr>
         <tr>
-          <td> Total Cost of Mortgage</td>
+          <td> Total Interest Payable</td>
           <td> £{totalValue}</td>
+        </tr>
+        <tr>
+          <td> Total Cost of Loan</td>
+          <td> £{value - deposit + totalValue}</td>
         </tr>
         <tr>
           <td> Monthly Payments</td>
